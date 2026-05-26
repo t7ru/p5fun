@@ -2,3 +2,7 @@ body {
 	padding: 0 1.5em;
 	text-align: center;
 }
+
+div {
+	display: flex;
+}
