@@ -13,10 +13,11 @@ function draw() {
 	let speed = parseFloat(document.getElementById("speed").value);
 	let scale = parseFloat(document.getElementById("scale").value);
 	let weight = parseFloat(document.getElementById("weight").value);
+	let rot = radians(parseFloat(document.getElementById("rotate").value));
 
 	for (let i = 0; i < numCurves; i++) {
 		push();
-		rotate((TWO_PI / numCurves) * i);
+		rotate((TWO_PI / numCurves) * i + rot);
 
 		let col1 = color(100, 200 + sin(frameCount * speed + i) * 100, 255);
 		let col2 = color(255, 100 + cos(frameCount * speed + i) * 100, 150);
