@@ -1,6 +1,8 @@
 body {
 	padding: 0 1.5em;
 	text-align: center;
+	background-color: rgb(10 15 30);
+	color: white;
 }
 
 div {
