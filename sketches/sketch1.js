@@ -2,12 +2,87 @@
 // sketch1.js — your first source sketch
 // Paste your source sketch code here and start hacking
 // =============================================
+let g,
+	cx = -0.5,
+	cy = 0,
+	z = 1;
 
 function setup() {
-  createCanvas(800, 500);
+	createCanvas(800, 500);
+	pixelDensity(1);
+	noSmooth();
+	g = createGraphics(260, 160);
+	g.pixelDensity(1);
 }
 
 function draw() {
-  background(220);
-  // your code here
+	cx +=
+		(map(mouseX, 0, width, -2.1, 0.7) +
+			sin(frameCount * 0.01) * 0.08 -
+			cx) *
+		0.03;
+	cy +=
+		(map(mouseY, 0, height, -1.2, 1.2) +
+			cos(frameCount * 0.013) * 0.05 -
+			cy) *
+		0.03;
+	z += ((mouseIsPressed ? 2.8 : 1.05) - z) * 0.04;
+
+	let w = 3 / z;
+	let h = 2 / z;
+	let sx = cx - w / 2;
+	let sy = cy - h / 2;
+	let m = 34;
+
+	g.loadPixels();
+	for (let y = 0; y < g.height; y++) {
+		for (let x = 0; x < g.width; x++) {
+			let a = sx + (x * w) / g.width;
+			let b = sy + (y * h) / g.height;
+			let ca = a;
+			let cb = b;
+			let i = 0;
+			while (i < m && a * a + b * b < 16) {
+				let aa = a * a - b * b + ca;
+				b = 2 * a * b + cb;
+				a = aa;
+				i += 1;
+			}
+			let k = (x + y * g.width) * 4;
+			let t = i < m ? pow(i / m, 0.7) : 0;
+			let n = 0.9 + 0.1 * sin((x + y + frameCount) * 0.03);
+			g.pixels[k] = i < m ? (10 + 245 * t) * n : 0;
+			g.pixels[k + 1] = i < m ? (35 + 170 * (1 - t)) * n : 0;
+			g.pixels[k + 2] = i < m ? (120 + 135 * (1 - t)) * n : 0;
+			g.pixels[k + 3] = 255;
+		}
+	}
+	g.updatePixels();
+	image(g, 0, 0, width, height);
+
+	push();
+	translate(width - 110, 20);
+
+	fill(0, 150);
+	stroke(255, 50);
+	strokeWeight(1);
+	rect(0, 0, 90, 60, 4);
+
+	let radarX = map(cx, -2.1, 0.7, 0, 90);
+	let radarY = map(cy, -1.2, 1.2, 0, 60);
+	let radarW = map(3 / z, 0, 2.8, 0, 90);
+	let radarH = map(2 / z, 0, 2.4, 0, 60);
+
+	noFill();
+	stroke(255, 0, 100);
+	rect(radarX - radarW / 2, radarY - radarH / 2, radarW, radarH);
+	line(radarX - 4, radarY, radarX + 4, radarY);
+	line(radarX, radarY - 4, radarX, radarY + 4);
+
+	fill(200);
+	noStroke();
+	textSize(9);
+	textFont("sans-serif");
+	text(`Z: ${z.toFixed(1)}x`, 5, 55);
+	pop();
 }
