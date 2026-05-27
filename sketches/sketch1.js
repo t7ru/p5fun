@@ -83,6 +83,6 @@ function draw() {
 	noStroke();
 	textSize(9);
 	textFont("sans-serif");
-	text(`Z: ${z.toFixed(1)}x`, 5, 52);
+	text(`Z: ${z.toFixed(1)}x`, 5, 55);
 	pop();
 }
