@@ -9,7 +9,7 @@ function setup() {
   createCanvas(800, 500);
   pixelDensity(1);
   noSmooth();
-  g = createGraphics(240, 150);
+  g = createGraphics(260, 160);
   g.pixelDensity(1);
 }
 
