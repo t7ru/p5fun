@@ -40,9 +40,9 @@ function draw() {
       }
       let k = (x + y * g.width) * 4;
       let t = i < m ? sqrt(i / m) : 0;
-      g.pixels[k] = i < m ? 30 + 220 * t : 0;
-      g.pixels[k + 1] = i < m ? 60 + 140 * (1 - t) : 0;
-      g.pixels[k + 2] = i < m ? 160 + 95 * (1 - t) : 0;
+      g.pixels[k] = i < m ? 10 + 245 * t : 0;
+      g.pixels[k + 1] = i < m ? 35 + 170 * (1 - t) : 0;
+      g.pixels[k + 2] = i < m ? 120 + 135 * (1 - t) : 0;
       g.pixels[k + 3] = 255;
     }
   }
