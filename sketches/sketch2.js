@@ -19,10 +19,11 @@ function draw() {
   }
   if (frameCount % 3 === 0) p.push(new P(width / 2, height - 12));
   let w = map(mouseX, 0, width, -0.05, 0.05);
+  let g = map(mouseY, 0, height, 0.02, -0.02);
   for (let i = p.length - 1; i >= 0; i -= 1) {
     let q = p[i];
     q.v.x += w;
-    q.v.y -= 0.01;
+    q.v.y += g;
     q.update();
     q.show();
     if (q.dead()) p.splice(i, 1);
