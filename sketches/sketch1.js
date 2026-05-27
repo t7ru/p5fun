@@ -39,7 +39,7 @@ function draw() {
         i += 1;
       }
       let k = (x + y * g.width) * 4;
-      let t = i < m ? sqrt(i / m) : 0;
+      let t = i < m ? pow(i / m, 0.7) : 0;
       let n = 0.9 + 0.1 * sin((x + y + frameCount) * 0.03);
       g.pixels[k] = i < m ? (10 + 245 * t) * n : 0;
       g.pixels[k + 1] = i < m ? (35 + 170 * (1 - t)) * n : 0;
