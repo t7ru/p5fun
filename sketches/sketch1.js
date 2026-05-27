@@ -26,14 +26,15 @@ function draw() {
 			cos(frameCount * 0.013) * 0.05 -
 			cy) *
 		0.03;
-	z += ((mouseIsPressed ? 2.8 : 1.05) - z) * 0.04;
+	z += ((mouseIsPressed ? 3 : 1.05) - z) * 0.04;
 
 	let w = 3 / z;
 	let h = 2 / z;
 	let sx = cx - w / 2;
 	let sy = cy - h / 2;
-	let m = 34;
+	let m = 36;
 
+	// lowres pixels keep the fractl responsive
 	g.loadPixels();
 	for (let y = 0; y < g.height; y++) {
 		for (let x = 0; x < g.width; x++) {
@@ -60,6 +61,7 @@ function draw() {
 	g.updatePixels();
 	image(g, 0, 0, width, height);
 
+	// the radar mirrors the current view
 	push();
 	translate(width - 110, 20);
 
