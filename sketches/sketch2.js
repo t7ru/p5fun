@@ -18,8 +18,8 @@ function draw() {
     for (let i = 0; i < 5; i += 1) p.push(new P(mouseX, mouseY));
   }
   if (frameCount % 2 === 0) p.push(new P(width / 2, height - 12));
-  let w = map(mouseX, 0, width, -0.05, 0.05);
-  let g = map(mouseY, 0, height, 0.02, -0.02);
+  let w = map(mouseX, 0, width, -0.08, 0.08);
+  let g = map(mouseY, 0, height, 0.02, -0.02) - 0.01;
   for (let i = p.length - 1; i >= 0; i -= 1) {
     let q = p[i];
     q.v.x += w;
