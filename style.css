@@ -2,6 +2,14 @@
    style.css — edit this however you like
    ============================================= */
 
+:root {
+	--bg: oklch(7% 0 0);
+	--border: oklch(18% 0 0);
+	--text: oklch(92% 0 0);
+	--muted: oklch(77% 0 0);
+	--accent: oklch(77% 0.12 160);
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -10,8 +18,8 @@
 
 body {
 	font-family: monospace;
-	background: #373737;
-	color: #eee;
+	background: var(--bg);
+	color: var(--text);
 }
 
 /* --- nav --- */
@@ -19,27 +27,41 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
-	padding: 1rem 2rem;
-	border-bottom: 1px solid #222;
+	padding: 0.875rem 2rem;
+	border-bottom: 1px solid var(--border);
 
 	a {
-		font-size: 0.85rem;
-		color: #35f12b;
+		font-size: 0.8rem;
+		color: var(--muted);
 		text-decoration: none;
-		border-bottom: 1px solid #444;
-		padding-bottom: 1px;
+		letter-spacing: 0.02em;
+		transition: color 0.15s;
 
 		&:hover {
-			color: #00b3ff;
-			border-color: #eee;
+			color: var(--text);
 		}
 	}
 }
 
 .nav-title {
 	flex: 1;
-	font-size: 0.9rem;
-	color: #35f12b;
+	font-size: 0.85rem;
+	color: var(--accent);
+	letter-spacing: 0.05em;
+}
+
+/* --- reset hint --- */
+#reset {
+	padding: 0.6rem 2rem;
+	font-size: 0.78rem;
+	color: var(--muted);
+	line-height: 1.8;
+	cursor: default;
+
+	b {
+		font-weight: normal;
+		color: var(--accent);
+	}
 }
 
 /* --- sketch --- */
@@ -54,26 +76,27 @@ nav {
 
 /* --- credits --- */
 #credits {
-	padding: 1.5rem 2rem;
-	border-top: 1px solid #222;
+	padding: 1.25rem 2rem;
+	border-top: 1px solid var(--border);
 
 	p {
-		font-size: 0.85rem;
-		color: #888;
-		line-height: 1.8;
+		font-size: 0.78rem;
+		color: var(--muted);
+		line-height: 1.9;
 	}
 
-	#credits a {
-		color: #666;
+	strong {
+		font-weight: normal;
+		color: oklch(62% 0 0);
+	}
+
+	a {
+		color: oklch(56% 0 0);
+		text-decoration: none;
+		transition: color 0.15s;
 
 		&:hover {
-			color: #eee;
+			color: var(--text);
 		}
 	}
-}
-
-#reset {
-	padding: 0 2rem;
-	color: #ddd;
-	font-size: 0.8rem;
 }
