@@ -42,13 +42,13 @@ class P {
 
   update() {
     this.p.add(this.v);
-    this.v.mult(0.99);
-    this.l -= 2.5;
+    this.v.mult(0.985);
+    this.l -= 2;
   }
 
   show() {
     fill(this.h, 200, 255, this.l);
-    circle(this.p.x, this.p.y, this.s * (1 - this.l / 255) + 4);
+    circle(this.p.x, this.p.y, this.s * (1 - this.l / 255) + 5);
   }
 
   dead() {
