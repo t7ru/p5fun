@@ -52,12 +52,6 @@ nav {
 	}
 }
 
-#reset {
-	padding: 0 2rem;
-	color: #ddd;
-	font-size: 0.8rem;
-}
-
 /* --- credits --- */
 #credits {
 	padding: 1.5rem 2rem;
@@ -76,4 +70,10 @@ nav {
 			color: #eee;
 		}
 	}
+}
+
+#reset {
+	padding: 0 2rem;
+	color: #ddd;
+	font-size: 0.8rem;
 }
