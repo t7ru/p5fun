@@ -2,7 +2,6 @@
 // sketch1.js — your first source sketch
 // Paste your source sketch code here and start hacking
 // =============================================
-
 let g,
 	cx = -0.5,
 	cy = 0,
@@ -60,4 +59,30 @@ function draw() {
 	}
 	g.updatePixels();
 	image(g, 0, 0, width, height);
+
+	push();
+	translate(width - 110, 20);
+
+	fill(0, 150);
+	stroke(255, 50);
+	strokeWeight(1);
+	rect(0, 0, 90, 60, 4);
+
+	let radarX = map(cx, -2.1, 0.7, 0, 90);
+	let radarY = map(cy, -1.2, 1.2, 0, 60);
+	let radarW = map(3 / z, 0, 2.8, 0, 90);
+	let radarH = map(2 / z, 0, 2.4, 0, 60);
+
+	noFill();
+	stroke(255, 0, 100);
+	rect(radarX - radarW / 2, radarY - radarH / 2, radarW, radarH);
+	line(radarX - 4, radarY, radarX + 4, radarY);
+	line(radarX, radarY - 4, radarX, radarY + 4);
+
+	fill(200);
+	noStroke();
+	textSize(9);
+	textFont("sans-serif");
+	text(`Z: ${z.toFixed(1)}x`, 5, 52);
+	pop();
 }
