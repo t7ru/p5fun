@@ -13,6 +13,7 @@ function setup() {
 
 function draw() {
   background(0, 20);
+  blendMode(ADD);
   if (mouseIsPressed) {
     for (let i = 0; i < 4; i += 1) p.push(new P(mouseX, mouseY));
   }
@@ -26,6 +27,7 @@ function draw() {
     q.show();
     if (q.dead()) p.splice(i, 1);
   }
+  blendMode(BLEND);
 }
 
 class P {
