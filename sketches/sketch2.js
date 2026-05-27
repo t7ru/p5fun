@@ -52,6 +52,6 @@ class P {
   }
 
   dead() {
-    return this.l <= 0 || this.p.y < -20 || this.p.x < -20 || this.p.x > width + 20;
+    return this.l <= 0 || this.p.y < -40 || this.p.x < -40 || this.p.x > width + 40;
   }
 }
