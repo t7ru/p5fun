@@ -47,6 +47,16 @@ nav a:hover {
   display: block;
 }
 
+main {
+  padding: 1rem 2rem 0;
+}
+
+#reset {
+  padding: 0 2rem;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
 /* --- credits --- */
 #credits {
   padding: 1.5rem 2rem;

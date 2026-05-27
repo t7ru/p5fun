@@ -1,14 +1,14 @@
 {
   "sketch1": {
-    "title": "source 1 title",
-    "author": "source 1 author",
-    "date": "source 1 date",
-    "source": "source 1 url"
+    "title": "Mandelbrot Set",
+    "author": "p5.js Contributors",
+    "date": "2024",
+    "source": "https://p5js.org/examples/math-and-physics-mandelbrot/"
   },
   "sketch2": {
-    "title": "source 2 title",
-    "author": "source 2 author",
-    "date": "source 2 date",
-    "source": "source 2 url"
+    "title": "Smoke Particles",
+    "author": "p5.js Contributors",
+    "date": "2024",
+    "source": "https://p5js.org/examples/math-and-physics-smoke-particle-system/"
   }
 }
