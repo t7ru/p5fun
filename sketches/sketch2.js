@@ -26,6 +26,7 @@ function draw() {
 	let w = map(mouseX, 0, width, -0.08, 0.08);
 	let g = map(mouseY, 0, height, 0.02, -0.02) - 0.01;
 
+	// the hole adds a sideways pull
 	let holeX = width / 2;
 	let holeY = height / 2 - 50;
 
@@ -68,8 +69,8 @@ class P {
 
 	update() {
 		this.p.add(this.v);
-		this.v.mult(0.985);
-		this.l -= 2;
+		this.v.mult(0.98);
+		this.l -= 1.8;
 	}
 
 	show() {
