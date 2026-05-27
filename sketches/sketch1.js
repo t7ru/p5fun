@@ -14,9 +14,9 @@ function setup() {
 }
 
 function draw() {
-  cx += (map(mouseX, 0, width, -1.8, 0.4) - cx) * 0.04;
-  cy += (map(mouseY, 0, height, -1, 1) - cy) * 0.04;
-  z += ((mouseIsPressed ? 1.8 : 1) - z) * 0.04;
+  cx += (map(mouseX, 0, width, -1.8, 0.4) + sin(frameCount * 0.01) * 0.08 - cx) * 0.04;
+  cy += (map(mouseY, 0, height, -1, 1) + cos(frameCount * 0.013) * 0.05 - cy) * 0.04;
+  z += ((mouseIsPressed ? 2.1 : 1.05) - z) * 0.04;
 
   let w = 3 / z;
   let h = 2 / z;
