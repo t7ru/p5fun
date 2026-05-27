@@ -1,0 +1,68 @@
+/* =============================================
+   style.css — edit this however you like
+   ============================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+  background: #373737;
+  color: #eee;
+}
+
+/* --- nav --- */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.nav-title {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #35f12b;
+}
+
+nav a {
+  font-size: 0.85rem;
+  color: #35f12b;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1px;
+}
+
+nav a:hover {
+  color: #00b3ff;
+  border-color: #eee;
+}
+
+/* --- sketch --- */
+#sketch-container canvas {
+  display: block;
+}
+
+/* --- credits --- */
+#credits {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #222;
+}
+
+#credits p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+#credits a {
+  color: #666;
+}
+
+#credits a:hover {
+  color: #eee;
+}

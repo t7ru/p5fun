@@ -1,0 +1,14 @@
+{
+  "sketch1": {
+    "title": "source 1 title",
+    "author": "source 1 author",
+    "date": "source 1 date",
+    "source": "source 1 url"
+  },
+  "sketch2": {
+    "title": "source 2 title",
+    "author": "source 2 author",
+    "date": "source 2 date",
+    "source": "source 2 url"
+  }
+}
