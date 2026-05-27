@@ -16,13 +16,13 @@ function setup() {
 function draw() {
   cx += (map(mouseX, 0, width, -1.8, 0.4) + sin(frameCount * 0.01) * 0.08 - cx) * 0.04;
   cy += (map(mouseY, 0, height, -1, 1) + cos(frameCount * 0.013) * 0.05 - cy) * 0.04;
-  z += ((mouseIsPressed ? 2.1 : 1.05) - z) * 0.04;
+  z += ((mouseIsPressed ? 2.5 : 1.05) - z) * 0.04;
 
   let w = 3 / z;
   let h = 2 / z;
   let sx = cx - w / 2;
   let sy = cy - h / 2;
-  let m = 30;
+  let m = 34;
 
   g.loadPixels();
   for (let y = 0; y < g.height; y++) {
