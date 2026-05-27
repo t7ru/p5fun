@@ -14,8 +14,8 @@ function setup() {
 }
 
 function draw() {
-  cx += (map(mouseX, 0, width, -2.1, 0.7) + sin(frameCount * 0.01) * 0.08 - cx) * 0.04;
-  cy += (map(mouseY, 0, height, -1.2, 1.2) + cos(frameCount * 0.013) * 0.05 - cy) * 0.04;
+  cx += (map(mouseX, 0, width, -2.1, 0.7) + sin(frameCount * 0.01) * 0.08 - cx) * 0.03;
+  cy += (map(mouseY, 0, height, -1.2, 1.2) + cos(frameCount * 0.013) * 0.05 - cy) * 0.03;
   z += ((mouseIsPressed ? 2.8 : 1.05) - z) * 0.04;
 
   let w = 3 / z;
@@ -40,7 +40,7 @@ function draw() {
       }
       let k = (x + y * g.width) * 4;
       let t = i < m ? sqrt(i / m) : 0;
-      let n = 0.9 + 0.1 * sin((x + y + frameCount) * 0.02);
+      let n = 0.9 + 0.1 * sin((x + y + frameCount) * 0.03);
       g.pixels[k] = i < m ? (10 + 245 * t) * n : 0;
       g.pixels[k + 1] = i < m ? (35 + 170 * (1 - t)) * n : 0;
       g.pixels[k + 2] = i < m ? (120 + 135 * (1 - t)) * n : 0;
