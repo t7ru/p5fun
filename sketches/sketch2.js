@@ -36,7 +36,7 @@ class P {
     this.p = createVector(x, y);
     this.v = createVector(random(-0.4, 0.4), random(-1.8, -0.4));
     this.l = 255;
-    this.h = random(160, 220);
+    this.h = (frameCount * 2 + random(60)) % 255;
     this.s = random(6, 14);
   }
 
