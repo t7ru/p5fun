@@ -23,7 +23,9 @@ function draw() {
 	let g = map(mouseY, 0, height, 0.02, -0.02) - 0.01;
 	for (let i = p.length - 1; i >= 0; i -= 1) {
 		let q = p[i];
-		q.v.x += w;
+		q.v.x +=
+			w +
+			(noise(q.p.x * 0.01, q.p.y * 0.01, frameCount * 0.01) - 0.5) * 0.15;
 		q.v.y += g;
 		q.update();
 		q.show();
