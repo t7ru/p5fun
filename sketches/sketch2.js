@@ -15,7 +15,7 @@ function draw() {
   background(0, 20);
   blendMode(ADD);
   if (mouseIsPressed) {
-    for (let i = 0; i < 4; i += 1) p.push(new P(mouseX, mouseY));
+    for (let i = 0; i < 5; i += 1) p.push(new P(mouseX, mouseY));
   }
   if (frameCount % 2 === 0) p.push(new P(width / 2, height - 12));
   let w = map(mouseX, 0, width, -0.05, 0.05);
